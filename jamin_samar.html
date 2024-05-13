@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passwortprüfung</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f7f7f7;
+    }
+
+    .heart {
+        font-size: 100px;
+        color: red;
+    }
+</style>
+</head>
+<body>
+
+<!-- Passworteingabefeld -->
+<form id="passwordForm" onsubmit="checkPassword(); return false;">
+    <label for="password">Passwort:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Einloggen</button>
+</form>
+
+<!-- Liebesbotschaft -->
+<div id="liebesbotschaft" style="display: none;">
+    <div class="heart">❤️</div>
+    <h1 style="text-align: center;">Hab dich lieb, guten Flug</h1>
+</div>
+
+<script>
+function checkPassword() {
+    var password = document.getElementById("password").value;
+    if (password === "Jamin_hat_dich_lieb") {
+        // Passwort ist korrekt
+        document.getElementById("passwordForm").style.display = "none";
+        document.getElementById("liebesbotschaft").style.display = "block";
+    } else {
+        // Falsches Passwort
+        alert("Falsches Passwort! Versuche es erneut.");
+    }
+}
+</script>
+
+</body>
+</html>
